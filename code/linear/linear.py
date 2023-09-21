@@ -57,7 +57,7 @@ def main():
     noise = np.random.normal(error_mean, error_standard_deviation, sample_size_n)
     # calcuate the output of the samples output = [(line model) + noise]
     experiment_Y = list(map(line_function, experiment_X)) + noise
-
+    print()
     # plot the noisy observations
     plt.scatter(experiment_X, experiment_Y)
     plt.xlabel("Pounds")
