@@ -46,24 +46,26 @@ def main():
     # df.plot.box()
     # plt.show()
 
-    # x = df['hp']
-    # y = df['qsec']
+    x = df['hp']
+    y = df['qsec']
     # plt.scatter(x, y)
     # plt.xlabel("Horse Power")
     # plt.ylabel("quarter mile speed (seconds)")
     # plt.show()
 
     # the fit
-    # polynomial_degree = 1
-    # coeffs = np.polyfit(x, y, polynomial_degree)
+    polynomial_degree = 1
+    coeffs = np.polyfit(x, y, polynomial_degree)
     # the predictions
-    # values = np.polyval(coeffs, x)
+    values = np.polyval(coeffs, x)
     # the estimated error / noise, rmse = root mean squared error
-    # mean_squared_error = sum((values - y)**2)/len(y)
-    # rmse = np.sqrt(mean_squared_error)
-    # print(rmse)
+    mean_squared_error = sum((values - y)**2)/len(y)
+    rmse = np.sqrt(mean_squared_error)
+    print(rmse)
+    print(type(values))
+    print(type(y))
 
-    # plot the curve of the fitted model
+    # plot the curve of the fitted mode
     # turn this into a function
 
     # curve_resolution = 100
@@ -95,8 +97,8 @@ def main():
     plt.scatter(x, y)
     rmse_arr.append(create_model(x, y, 1))
     rmse_arr.append(create_model(x, y, 2))
-    print(rmse_arr)
-    plt.show()
+    # print(rmse_arr)
+    # plt.show()
     coeffs = np.polyfit(x, y, 2)
     # plot_curve(x, coeffs, "Weight", "Miles per hour")
     
