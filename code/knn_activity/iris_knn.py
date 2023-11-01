@@ -82,9 +82,8 @@ def main():
     for i in range(len(actual)):
         conf_matrix[labels.index(predicted[i])][labels.index(actual[i])] += 1
 
-    # print_matrix(3,3, conf_matrix)
-
-    # print(confusion_matrix(actual, predicted))
+    print_matrix(3,3, conf_matrix)
+    print(confusion_matrix(actual, predicted))
 
 
 def print_matrix(row_len, col_len, matrix):
